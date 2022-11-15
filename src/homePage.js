@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./homePage.css";
 import axios from "axios";
 
-let api = "https://blink.herokuapp.com/url/shorten";
+let api = "https://blink.up.railway.app/url/shorten";
 const HomePage = () => {
   const [longUrl, setLongUrl] = useState("");
   const [result, setResult] = useState("");
