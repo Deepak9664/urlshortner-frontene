@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./homePage.css";
 import axios from "axios";
+
 
 let api = "https://blink.up.railway.app/url/shorten";
 const HomePage = () => {
   const [longUrl, setLongUrl] = useState("");
   const [result, setResult] = useState("");
-
+  // useEffect(() => {
+  //      alert("I am clicked");
+  //    },[result]);
   const postData = (e) => {
-    // e.preventDefault();
+     e.preventDefault();
+    if(!longUrl){
+      alert("enter the long url")
+    }
     axios
       .post(api, {
         longUrl,
@@ -75,21 +81,10 @@ const HomePage = () => {
       <footer>
         <p>
           Created By - <i className="fa fa-heart"></i>
-          <a href="https://www.linkedin.com/in/utkarshgarg62/">
-            Utkarsh Garg
-          </a>{" "}
-          {/* and
-          <a href="https://www.linkedin.com/in/monisha-mittal-848581238/">
-            {" "}
-            Monisha Mittal{" "}
-          </a> */}
-          - Read how I created this and you can see backend repository -
-          <a href="https://github.com/utkarshgarg62/project-urlShortner">
-            {" "}
-            HERE{" "}
+          <a href="https://www.linkedin.com/in/deepak-singh-25037a159/">
+           Deepak singh (Linkdin profile)
           </a>
-          .
-        </p>
+         </p>
       </footer>
     </div>
   );
