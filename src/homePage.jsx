@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./homePage.css";
 import axios from "axios";
 
@@ -8,10 +8,10 @@ const HomePage = () => {
   const [longUrl, setLongUrl] = useState("");
   const [result, setResult] = useState("");
   // useEffect(() => {
-  //      alert("I am clicked");
+  //      alert("enter the long url");
   //    },[result]);
-  const postData = (e) => {
-     e.preventDefault();
+  const postData = () => {
+    //  e.preventDefault();
     if(!longUrl){
       alert("enter the long url")
     }
@@ -21,8 +21,10 @@ const HomePage = () => {
       })
       .then((res) => {
         // console.log(res);
-        setResult(res.data.data);
-        console.log(res.data.data);
+        setResult(res.data);
+        console.log(res.data);
+      },(error) => {
+        console.log(error);
       });
   };
   // console.log(result);
@@ -33,7 +35,7 @@ const HomePage = () => {
           <div className="form">
             <div className="div">
               <div>
-                <h1>Enter a long url</h1>
+                <h1>Enter a long url{result}</h1>
                 <span>to make it short</span>
                 <input
                   id="input"
@@ -41,7 +43,7 @@ const HomePage = () => {
                   name="longUrl"
                   value={longUrl}
                   placeholder="Shorten your url"
-                  onChange={(e) => setLongUrl(e.target.value)}
+                  onChange={(event) => setLongUrl(event.target.value)}
                 />
               </div>
               <button
@@ -55,9 +57,9 @@ const HomePage = () => {
             <br></br>
             <br></br>
             <br></br>
-            <div id="result">
-              <a href={result.shortUrl}>{result.shortUrl}</a>
-            </div>
+            {/* <div id="result">
+              <a href={result}>{result}</a>
+            </div> */}
           </div>
         </div>
 
