@@ -21,8 +21,8 @@ const HomePage = () => {
       })
       .then((res) => {
         // console.log(res);
-        setResult(res.data);
-        console.log(res.data);
+        setResult(res.data.data);
+        console.log(res.data.data);
       },(error) => {
         console.log(error);
       });
@@ -72,7 +72,7 @@ const HomePage = () => {
                 sharing of long urls, also implemented caching to deliver quick
                 responses.
               </p>
-              <a href="https://github.com/utkarshgarg62" className="github">
+              <a href="https://github.com/Deepak9664" className="github">
                 github
               </a>
             </div>
